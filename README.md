@@ -18,21 +18,26 @@ Misc Notes to Self:
 Dev Env Setup
 
 Setup a home folder:
+```
 - mkdir pico-dev
-
+```
 ARM Toolchains:
+```
 - cd pico-dev
 - wget https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
 - tar -xvzf toolchain.file
 - export PICO_TOOLCHAIN_PATH=/path/to/your/toolchain
-
+- export PICO_TOOLCHAIN_PATH=~/Downloads/pico-dev/arm-toolchain
+```
 Pico SDK:
+```
 - git clone https://github.com/raspberrypi/pico-sdk.git 
 - cd pico-sdk 
 - git submodule update --init 
 - export PICO_SDK_PATH=$(pwd)
-
+```
 Picotool:
+```
 * git clone https://github.com/raspberrypi/picotool.git
 * cd picotool 
 * mkdir build 
@@ -40,17 +45,18 @@ Picotool:
 * cmake .. 
 * make
 * cp picotool /usr/local/bin
+```
 
 
-export PICO_TOOLCHAIN_PATH=~/Downloads/pico-dev/arm-toolchain
 
 
 Build:
+```
 - From the build sub folder in my-project: 
     - cmake .. -DPICO_SDK_PATH=~/Downloads/pico-dev/pico-sdk  -DPICO_BOARD=adafruit_feather_rp2040
     - 
     - make
-
+```
 SWD / Debug / OpenOCD
 
 OpenOCD:
